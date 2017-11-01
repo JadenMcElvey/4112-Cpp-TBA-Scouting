@@ -11,4 +11,5 @@
 
 std::string performtostring(curlpp::Easy& request, std::string& url);
 bool parse(std::string& response, std::string seperator, std::string& value);
+bool parselast(std::string& response, std::string seperator, std::string& value);
 #endif

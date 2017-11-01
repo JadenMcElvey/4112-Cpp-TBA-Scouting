@@ -3,12 +3,34 @@ using namespace std;
 
 bool androidver(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
-	return false;
+	version.resize(7);
+	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
+	string response = performtostring(request, url);
+	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	{
+		parse(response, "\"latest_app_version\": ", version);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 bool iosver(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
-	return false;
+	version.resize(2);
+	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
+	string response = performtostring(request, url);
+	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	{
+		parselast(response, "\"latest_app_version\": ", version);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 bool currentseason(curlpp::Easy& request, const std::string& Key, std::string& season)

@@ -30,3 +30,14 @@ bool parse(std::string& response, std::string seperator, std::string& value)
   copy(start, end, value.begin());
   return true;
 }
+
+bool parselast(std::string& response, std::string seperator, std::string& value)
+{
+  string::iterator start, end;
+  start = find_end(response.begin(), response.end(), seperator.begin(), seperator.end());
+  advance(start, seperator.length());
+  end = start;
+  advance(end, value.length());
+  copy(start, end, value.begin());
+  return true;
+}
