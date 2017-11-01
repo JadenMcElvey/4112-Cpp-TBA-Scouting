@@ -1,6 +1,10 @@
-#ifndef GUARD_TBAstat
-#define  GUARD_TBAstat
+#ifndef TBAstat
+#define  TBAstat
 #include <string>
+#include <sstream>
+#include <algorithm>
+
+#include "TBAinternal.hpp"
 
 #include "curlpp/cURLpp.hpp"
 #include "curlpp/Easy.hpp"
