@@ -1,7 +1,7 @@
 #include "TBAstatus.hpp"
 using namespace std;
 
-bool androidver(curlpp::Easy& request, const std::string& Key, std::string& version)
+bool androidVer(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
 	version.resize(7);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
@@ -17,7 +17,7 @@ bool androidver(curlpp::Easy& request, const std::string& Key, std::string& vers
 	}
 }
 
-bool iosver(curlpp::Easy& request, const std::string& Key, std::string& version)
+bool iosVer(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
 	version.resize(2);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
@@ -33,7 +33,7 @@ bool iosver(curlpp::Easy& request, const std::string& Key, std::string& version)
 	}
 }
 
-bool currentseason(curlpp::Easy& request, const std::string& Key, std::string& season)
+bool currentSeason(curlpp::Easy& request, const std::string& Key, std::string& season)
 {
 	season.resize(4);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
