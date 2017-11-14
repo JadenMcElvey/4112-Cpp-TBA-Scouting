@@ -23,8 +23,8 @@ Use the following flags/commands when you tell g++ to compile.(preferably in ord
 * `-lcurlpp` to tell g++ to use the cURLpp .dylib
 
 #### Visual Studio Code with g++
-Using [Visual Studio Tasks](https://code.visualstudio.com/docs/languages/cpp#_navigating-code)
-* Go [here](https://code.visualstudio.com/docs/languages/cpp#_navigating-code) and scroll down to "Building your code"
+Using [Visual Studio Tasks](https://code.visualstudio.com/docs/languages/cpp#_getting-started)
+* Go [here](https://code.visualstudio.com/docs/languages/cpp#_getting-started) and scroll down to "Building your code"
 * Follow the first 4 bullet points
 * add `"-std=c++14"`, `"-L/path/to/libraries"`, `"-lcurl"`, and `"-lcurlpp"` to the args sections seperated by commas in order
 
