@@ -10,17 +10,17 @@ Instruction to link the libraries to your project are provided for eclipse, g++,
 
 #### Eclipse (neon and oxygen)
 Go to project properties by right clicking your project and selecting properties  
-navigate to Properties>C/C++ Build>Settings>GCC C++ Compiler and add `-std=c++14` to commands with a single space before it  
-navigate to Properties>C/C++ Build>Settings>Libraries add `path/to/libraries` in Library search path (-L)  
-navigate to Properties>C/C++ Build>Settings>Libraries add `curl` libraries (-l)  
-navigate to Properties>C/C++ Build>Settings>Libraries add `curlpp` libraries (-l)  
+* navigate to Properties>C/C++ Build>Settings>GCC C++ Compiler and add `-std=c++14` to commands with a single space before it
+* navigate to Properties>C/C++ Build>Settings>Libraries add `path/to/libraries` in Library search path (-L)
+* navigate to Properties>C/C++ Build>Settings>Libraries add `curl` libraries (-l)
+* navigate to Properties>C/C++ Build>Settings>Libraries add `curlpp` libraries (-l)
 
 #### g++ (only tested with version 4.2.1)
 Use the following flags/commands when you tell g++ to compile.(preferably in order)  
-`-std=c++14` to compile using c++14  
-`-L/path/to/libraries` to tell g++ where the .dylib library files are saved  
-`-lcurl` to tell g++ to use the libcURL .dylib  
-`-lcurlpp` to tell g++ to use the cURLpp .dylib
+* `-std=c++14` to compile using c++14
+* `-L/path/to/libraries` to tell g++ where the .dylib library files are saved
+* `-lcurl` to tell g++ to use the libcURL .dylib
+* `-lcurlpp` to tell g++ to use the cURLpp .dylib
 
 #### Visual Studio Code with g++
 Using [Visual Studio Tasks](https://code.visualstudio.com/docs/languages/cpp#_navigating-code)
