@@ -68,6 +68,34 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
   return true;
 }
 
+bool parse(std::string& response, std::string seperator1, std::string seperator2, std::string seperator3, std::map<std::string, std::string>& values)
+{
+  // use to parse pairs of values between two seperators
+  std::string first;
+  std::string second;
+  string::iterator start, middle, end;
+  start = response.begin();
+  while (start != response.end())
+  {
+    start = search(start, response.end(), seperator1.begin(), seperator1.end());
+    advance(start, seperator1.length());
+    middle = search(start, response.end(), seperator2.begin(), seperator2.end());
+    first.resize(std::distance(start, middle));
+    copy(start, middle, first.begin());
+    advance(middle, seperator2.length());
+    end = search(middle, response.end(), seperator3.begin(), seperator3.end());
+    second.resize(std::distance(middle, end));
+    copy(middle, end, second.begin());
+    values[first] = second;
+    start = end;
+    start++;
+    first.clear();
+    second.clear();
+    start = search(start, response.end(), seperator1.begin(), seperator1.end());
+  }
+  return true;
+}
+
 bool parselast(std::string& response, std::string seperator, std::string& value)
 {
   //finds value within TBA response after LAST occurence of seperator

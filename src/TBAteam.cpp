@@ -33,7 +33,7 @@ bool teamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::st
 	}
 }
 
-bool yearTeamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, std::string& year, std::vector<std::string>& events)
+bool yearTeamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, const std::string& year, std::vector<std::string>& events)
 {
 	// gets all event keys from a single FRC season (requires teamKey and year)
   string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/events/"+ year +"/keys" + AuthKey;

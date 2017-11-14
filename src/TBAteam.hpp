@@ -15,7 +15,7 @@ bool teamDistrict(curlpp::Easy& request, const std::string& AuthKey, const std::
 // gets the district of a team (requires teamKey)
 bool teamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, std::vector<std::string>& events);
 // gets all event keys a team has or will compete at (requires teamKey)
-bool yearTeamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, std::string& year, std::vector<std::string>& events);
+bool yearTeamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, const std::string& year, std::vector<std::string>& events);
 // gets all event keys from a single FRC season (requires teamKey and year)
 bool teamMatchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, const std::string& eventKey, std::vector<std::string>& matches);
 // get a teams matche keys at an event (requires teamKey and eventKey)
