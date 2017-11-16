@@ -1,4 +1,4 @@
-# 4112 C++ TBA Scouting Application
+# FRC Team 4112 C++ TBA Scouting Application
 This project is designed to provide FRC teams with a simple solution to gather scouting data via the [The Blue Alliance API V3](https://www.thebluealliance.com/apidocs/v3). 
 
 ## Getting Started
@@ -49,7 +49,7 @@ Examples coming soon
 * [cURLpp](http://www.curlpp.org) - C++ wrapper for libcURL
 
 ## Authors
-* **Jaden McElvey** - *Initial work* - [github](https://github.com/JadenMcElvey)
+* **Jaden McElvey** - *All* - [github](https://github.com/JadenMcElvey)
 
 ## Acknowledgments
 * [jpbarrette](https://github.com/jpbarrette) - creator of cURLpp
