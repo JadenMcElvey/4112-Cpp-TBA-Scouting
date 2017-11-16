@@ -2,7 +2,7 @@
 This project is designed to provide FRC teams with a simple solution to gather scouting data via the [The Blue Alliance API V3](https://www.thebluealliance.com/apidocs/v3). 
 
 ## Getting Started
-The first step in this project is to copy all of the files from [./src](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/src) and `#include` the headers relevant to your needs. Secondly the libcURL and cURLpp [libraries(.dylib)](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/Libraries) need to be linked to the project.
+The first step in this project is to copy all of the files from [./src/](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/src) and `#include` the headers relevant to your needs. Secondly the libcURL and cURLpp [libraries(.dylib)](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/Libraries) need to be linked to the project.
 
 ### Prerequisites
 This project relies entirely on [libcURL](https://curl.haxx.se/libcurl/) and [cURLpp](http://www.curlpp.org) to use these they **must** your project must be linked to these libraries. I've provided the .dylib files that need to be linked [here](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/Libraries) to alleviate the need of having to download the files yourself. Yes, you can gather the find the files yourself by installing libcURL and cURLpp for testing purposes, but that is beyond the scope of this project. 
@@ -43,6 +43,9 @@ For other operating systems download libcURL from [here](https://curl.haxx.se/do
 
 ## Examples
 Examples coming soon
+
+##Notes on Future FRC Seasons
+The intent of this project is to be applicable to each FRC season with more than just general FRC data but data based off of the current years game. Due to the nature of FRC this project can not be updated with game specific functions until the release of the game. For instance in 2017's game steamworks it was possibly to collect data on which touch pads had been pressed, but these game specific function can only be written after the release of the game. It is the intent of this project to implement game specific functions as soon as The Blue Alliance releases their API models or assuming they do not pre release their API models, when calls can be made to their API after week one of competition. These are currently the limitations of this project due to the game reveal format of FRC and the reliance on The Blue Alliance API but this project will be updated with game specific functions as soon as possible.
 
 ## Built With
 * [libcURL](https://curl.haxx.se) - Basis for sending HTTPS requests
