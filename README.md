@@ -44,7 +44,7 @@ For other operating systems download libcURL from [here](https://curl.haxx.se/do
 ## Examples
 Examples coming soon
 
-##Notes on Future FRC Seasons
+## Notes on Future FRC Seasons
 The intent of this project is to be applicable to each FRC season with more than just general FRC data but data based off of the current years game. Due to the nature of FRC this project can not be updated with game specific functions until the release of the game. For instance in 2017's game steamworks it was possibly to collect data on which touch pads had been pressed, but these game specific function can only be written after the release of the game. It is the intent of this project to implement game specific functions as soon as The Blue Alliance releases their API models or assuming they do not pre release their API models, when calls can be made to their API after week one of competition. These are currently the limitations of this project due to the game reveal format of FRC and the reliance on The Blue Alliance API but this project will be updated with game specific functions as soon as possible.
 
 ## Built With
