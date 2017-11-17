@@ -3,6 +3,7 @@ using namespace std;
 
 bool androidVer(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
+	//gets the current version of the TBA android app
 	version.resize(7);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
 	string response = performtostring(request, url);
@@ -19,6 +20,7 @@ bool androidVer(curlpp::Easy& request, const std::string& Key, std::string& vers
 
 bool iosVer(curlpp::Easy& request, const std::string& Key, std::string& version)
 {
+	//gets the current version of the TBA ios app
 	version.resize(2);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
 	string response = performtostring(request, url);
@@ -35,6 +37,7 @@ bool iosVer(curlpp::Easy& request, const std::string& Key, std::string& version)
 
 bool currentSeason(curlpp::Easy& request, const std::string& Key, std::string& season)
 {
+	//gets the year of the current FRC season
 	season.resize(4);
 	string url = "https://www.thebluealliance.com/api/v3/status" + Key;
 	string response = performtostring(request, url);

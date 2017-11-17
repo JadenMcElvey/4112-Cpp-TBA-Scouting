@@ -3,6 +3,7 @@ using namespace std;
 
 bool disqualifiedTeams(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
+	// gets a vector of all teams disqualified in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -22,6 +23,7 @@ bool disqualifiedTeams(curlpp::Easy& request, const std::string& AuthKey, const 
 }
 bool wasDisqualified(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, bool& disqualified)
 {
+	// gets if a specific team was disqualified from a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -41,6 +43,7 @@ bool wasDisqualified(curlpp::Easy& request, const std::string& AuthKey, const st
 }
 bool autoPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
+	// gets the auto points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -75,6 +78,7 @@ bool autoPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 }
 bool teleopPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
+	// gets the teleop points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -109,6 +113,7 @@ bool teleopPoints(curlpp::Easy& request, const std::string& AuthKey, const std::
 }
 bool totalPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
+	// gets the total points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -143,6 +148,7 @@ bool totalPoints(curlpp::Easy& request, const std::string& AuthKey, const std::s
 }
 bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
 {
+	// gets the number of fouls caused by an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -177,6 +183,7 @@ bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::str
 }
 bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
 {
+	// gets the number of tech fouls caused by an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -211,6 +218,7 @@ bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std:
 }
 bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
 {
+	// gets the number of points an alliance recieved from fouls
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -245,6 +253,7 @@ bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 }
 bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
+	// gets the teamKeys of the winners of a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -277,6 +286,7 @@ bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::strin
 }
 bool losers(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
+	// gets the teamKeys of the losers of a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
@@ -309,6 +319,7 @@ bool losers(curlpp::Easy& request, const std::string& AuthKey, const std::string
 }
 bool didWin(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, bool& win)
 {
+	// gets whether or not a team won a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
 	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
