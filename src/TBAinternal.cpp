@@ -26,11 +26,18 @@ bool parse(std::string& response, std::string seperator, std::string& value)
   //use to parse for value after FIRST occurence of seperator
   string::iterator start, end;
   start = search(response.begin(), response.end(), seperator.begin(), seperator.end());
-  advance(start, seperator.length());
-  end = start;
-  advance(end, value.length());
-  copy(start, end, value.begin());
-  return true;
+  if (start != response.end())
+  {
+    advance(start, seperator.length());
+    end = start;
+    advance(end, value.length());
+    copy(start, end, value.begin());
+    return true;
+  }
+  else 
+  {
+    return false;
+  }  
 }
 
 bool parse(std::string& response, std::string seperator1, std::string seperator2, std::string& value)
@@ -39,11 +46,19 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
   string::iterator start, end;
   start = response.begin();
   start = search(start, response.end(), seperator1.begin(), seperator1.end());
-  advance(start, seperator1.length());
-  end = search(start, response.end(), seperator2.begin(), seperator2.end());
-  value.resize(std::distance(start, end));
-  copy(start, end, value.begin());
-  return true;
+  if (start != response.end())
+  {
+    advance(start, seperator1.length());
+    end = search(start, response.end(), seperator2.begin(), seperator2.end());
+    value.resize(std::distance(start, end));
+    copy(start, end, value.begin());
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+  
 }
 
 bool parse(std::string& response, std::string seperator1, std::string seperator2, std::vector<std::string>& values)
@@ -52,9 +67,12 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
   std::string value;
   string::iterator start, end;
   start = response.begin();
-  while (start != response.end())
+  start = search(start, response.end(), seperator1.begin(), seperator1.end());
+  if (start != response.end())
   {
-    start = search(start, response.end(), seperator1.begin(), seperator1.end());
+    while (start != response.end())
+    {
+    
     advance(start, seperator1.length());
     end = search(start, response.end(), seperator2.begin(), seperator2.end());
     value.resize(std::distance(start, end));
@@ -64,8 +82,15 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
     start++;
     value.clear();
     start = search(start, response.end(), seperator1.begin(), seperator1.end());
+    }
+    return true;
   }
-  return true;
+  else 
+  {
+    return false;
+  }
+
+  
 }
 
 bool parse(std::string& response, std::string seperator1, std::string seperator2, std::string seperator3, std::map<std::string, std::string>& values)
@@ -75,9 +100,11 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
   std::string second;
   string::iterator start, middle, end;
   start = response.begin();
-  while (start != response.end())
+  start = search(start, response.end(), seperator1.begin(), seperator1.end());
+  if (start != response.end())
   {
-    start = search(start, response.end(), seperator1.begin(), seperator1.end());
+    while (start != response.end())
+    {
     advance(start, seperator1.length());
     middle = search(start, response.end(), seperator2.begin(), seperator2.end());
     first.resize(std::distance(start, middle));
@@ -92,8 +119,15 @@ bool parse(std::string& response, std::string seperator1, std::string seperator2
     first.clear();
     second.clear();
     start = search(start, response.end(), seperator1.begin(), seperator1.end());
+    }
+    return true;
   }
-  return true;
+  else
+  {
+    return false;
+  }
+  
+  
 }
 
 bool parselast(std::string& response, std::string seperator, std::string& value)
@@ -101,11 +135,18 @@ bool parselast(std::string& response, std::string seperator, std::string& value)
   //finds value within TBA response after LAST occurence of seperator
   string::iterator start, end;
   start = find_end(response.begin(), response.end(), seperator.begin(), seperator.end());
-  advance(start, seperator.length());
-  end = start;
-  advance(end, value.length());
-  copy(start, end, value.begin());
-  return true;
+  if (start != response.end())
+  {
+    advance(start, seperator.length());
+    end = start;
+    advance(end, value.length());
+    copy(start, end, value.begin());
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
 
 bool parselast(std::string& response, std::string seperator1, std::string seperator2, std::string& value)
@@ -114,9 +155,16 @@ bool parselast(std::string& response, std::string seperator1, std::string sepera
   string::iterator start, end;
   start = response.begin();
   start = find_end(start, response.end(), seperator1.begin(), seperator1.end());
-  advance(start, seperator1.length());
-  end = search(start, response.end(), seperator2.begin(), seperator2.end());
-  value.resize(std::distance(start, end));
-  copy(start, end, value.begin());
-  return true;
+  if (start != response.end())
+  {
+    advance(start, seperator1.length());
+    end = search(start, response.end(), seperator2.begin(), seperator2.end());
+    value.resize(std::distance(start, end));
+    copy(start, end, value.begin());
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
