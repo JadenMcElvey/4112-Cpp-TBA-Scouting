@@ -6,7 +6,7 @@ All examples use the following placeholder values except where otherwise stated.
 * 2017 Gainseville Match 9 (2017gagai_qm9)
 * FRC Team 4112 (frc4112)
 ## Status Examples
-All status examples require `#include "TBAstatus.hpp"`
+All status functions require `#include "TBAstatus.hpp"`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Outputs current version of TBA android app  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Outputs current version of TBA ios app  
