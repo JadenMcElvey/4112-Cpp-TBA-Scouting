@@ -39,14 +39,14 @@ All team examples require `#include "TBAteam.hpp"`
 ## Match Examples
 All match examples require `#include "TBAmatch.hpp"`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16. Outputs all teams disqualified in a match(uses 2017gagai_qm1)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17. Outputs if a team was disualified from a specific match(uses 2017gagai_qm1 and frc5734)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16. Outputs all teams disqualified in a match (uses 2017gagai_qm1)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17. Outputs if a team was disualified from a specific match (uses 2017gagai_qm1 and frc5734)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18. Outputs the amount of autonomous points scored by an alliance in a match  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19. Outputs the amount of teleop points scored by an alliance in a match  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20. Outputs the total amount of points scored by an alliance in a match  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21. Outputs the number of fouls scored by a team in a match(uses 2017gagai_qm1 and frc5734)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22. Outputs the number of tech fouls scored by a team in a match(uses 2017gagai_qm1 and frc5734)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23. Outputs the amount of points an alliance recieved from fouls in a match(uses 2017gagai_qm1 and frc1311)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21. Outputs the number of fouls scored by a team in a match (uses 2017gagai_qm1 and frc5734)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22. Outputs the number of tech fouls scored by a team in a match (uses 2017gagai_qm1 and frc5734)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23. Outputs the amount of points an alliance recieved from fouls in a match (uses 2017gagai_qm1 and frc1311)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24. Outputs the winning teams of a match  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25. Outputs the losing teams of a match  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26. Outputs if a team did win a specific match  
