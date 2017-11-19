@@ -49,4 +49,4 @@ All match examples require `#include "TBAmatch.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23. Outputs the amount of points an alliance recieved from fouls in a match (uses 2017gagai_qm1 and frc1311)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24. Outputs the winning teams of a match  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25. Outputs the losing teams of a match  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26. Outputs if a team did win a specific match  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26. Outputs if a team won a specific match  
