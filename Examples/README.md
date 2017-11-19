@@ -13,13 +13,13 @@ All status examples require `#include "TBAstatus.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Outputs the year of the current FRC season  
 
 ## District Examples
-All district examples require `#include "TBAdistrict.hpp"`
+All district functions require `#include "TBAdistrict.hpp"`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Outputs all the eventKeys of all events in an FRC district  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Outputs all the teamKeys of all teams in a district  
 
 ## Event Examples
-All event examples require `#include "TBAevent.hpp"`
+All event functions require `#include "TBAevent.hpp"`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. Outputs all the teamKeys of all teams at an event  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. Outputs outputs the oprs of all the teams at an event  
@@ -28,7 +28,7 @@ All event examples require `#include "TBAevent.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. Outputs the matchKeys of all the matches at an event  
 
 ## Team Examples
-All team examples require `#include "TBAteam.hpp"`
+All team functions require `#include "TBAteam.hpp"`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11. Outputs a team's districtKey  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12. Outputs all of a team's eventKeys  
@@ -37,7 +37,7 @@ All team examples require `#include "TBAteam.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15. Outputs the awards won by a team at an event  
 
 ## Match Examples
-All match examples require `#include "TBAmatch.hpp"`
+All match functions require `#include "TBAmatch.hpp"`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16. Outputs all teams disqualified in a match (uses 2017gagai_qm1)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17. Outputs if a team was disualified from a specific match (uses 2017gagai_qm1 and frc5734)  
