@@ -4,6 +4,7 @@ This project is designed to provide FRC teams with a simple solution to gather s
 
 ## Getting Started
 The first step in this project is to copy all of the files from [./src/](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/src) and `#include` the headers relevant to your needs. Secondly the libcURL and cURLpp [libraries(.dylib)](https://github.com/JadenMcElvey/4112-Cpp-TBA-Scouting-Application/tree/master/Libraries) need to be linked to the project.
+
 #### Getting an access token
 Also an access token is needed to use the TBA read API and detailed instructions for getting one are located [here](https://www.thebluealliance.com/apidocs#apiv3). When using the key in your project it should be written to a string variable as `?X-TBA-Auth-Key=YourKeyHere` so that it can be passed to the necessary functions.
 
