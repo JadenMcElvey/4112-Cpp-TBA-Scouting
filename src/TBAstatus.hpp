@@ -11,10 +11,10 @@
 #include "curlpp/Options.hpp"
 #include "curlpp/Exception.hpp"
 
-bool androidVer(curlpp::Easy& request, const std::string& Key, std::string& version);
+bool androidVer(curlpp::Easy& request, const std::string& AuthKey, std::string& version);
 //gets the current version of the TBA android app
-bool iosVer(curlpp::Easy& request, const std::string& Key, std::string& version);
+bool iosVer(curlpp::Easy& request, const std::string& AuthKey, std::string& version);
 //gets the current version of the TBA ios app
-bool currentSeason(curlpp::Easy& request, const std::string& Key, std::string& season);
+bool currentSeason(curlpp::Easy& request, const std::string& AuthKey, std::string& season);
 //gets the year of the current FRC season
 #endif
