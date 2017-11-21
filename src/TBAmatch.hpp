@@ -25,7 +25,7 @@ bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::str
 // gets the number of fouls caused by an alliance in a match
 bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls);
 // gets the number of tech fouls caused by an alliance in a match
-bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls);
+bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points);
 // gets the number of points an alliance recieved from fouls
 bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams);
 // gets the teamKeys of the winners of a match

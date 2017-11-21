@@ -216,7 +216,7 @@ bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std:
 		return false;
 	}
 }
-bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
+bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
 	// gets the number of points an alliance recieved from fouls
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
@@ -231,14 +231,14 @@ bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 		{
 			string allianceData;
 			parselast(response, "\"blue\": {", "}", allianceData);
-			parse(allianceData, "\"foulPoints\": ", ",", fouls);
+			parse(allianceData, "\"foulPoints\": ", ",", points);
 			return true;
 		}
 		else if (search(red.begin(), red.end(), teamKey.begin(), teamKey.end()) != red.end())
 		{
 			string allianceData;
 			parselast(response, "\"red\": {", "}", allianceData);
-			parse(allianceData, "\"foulPoints\": ", ",", fouls);
+			parse(allianceData, "\"foulPoints\": ", ",", points);
 			return true;
 		}
 		else
