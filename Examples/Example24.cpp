@@ -12,13 +12,16 @@
 
 int main(int argc, char *argv[])
 {
+    //declare variables
     curlpp::Easy request;
     std::string authKey = "?X-TBA-Auth-Key=H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string matchKey = "2017gagai_qm9";
     std::vector<std::string> teams;
 
+    //write values to teams
     winners(request, authKey, matchKey, teams);
     
+    //write values to standard output
     for (std::vector<std::string>::iterator i = teams.begin(); i != teams.end(); i++)
     {
     	std::cout << *i << std::endl;

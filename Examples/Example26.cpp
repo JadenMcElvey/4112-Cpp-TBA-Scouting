@@ -12,15 +12,18 @@
 
 int main(int argc, char *argv[])
 {
+    //declare variables
     curlpp::Easy request;
     std::string authKey = "?X-TBA-Auth-Key=H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string matchKey = "2017gagai_qm9";
     std::string teamKey = "frc4112";
-    bool disqualified;
+    bool won;
 
-    didWin(request, authKey, matchKey, teamKey, disqualified);
+    //write value to won
+    didWin(request, authKey, matchKey, teamKey, won);
     
-    std::cout << disqualified << std::endl;
+    //write value to standard output
+    std::cout << won << std::endl;
 
     return 0;
 }
