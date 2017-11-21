@@ -1,3 +1,4 @@
+![4112 Logo](/Resources/4112Logo.jpg)
 # FRC Team 4112 C++ TBA Scouting Application
 This project is designed to provide FRC teams with a simple solution to gather scouting data via the [The Blue Alliance API V3](https://www.thebluealliance.com/apidocs/v3). 
 
