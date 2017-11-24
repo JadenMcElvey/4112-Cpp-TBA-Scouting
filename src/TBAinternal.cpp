@@ -6,6 +6,7 @@ string performtostring(curlpp::Easy& request, string& url)
   //returns TBA response as string to be parsed
   try {
     request.setOpt(new curlpp::options::Url(url));
+    request.setOpt(new curlpp::options::UserAgent("4112-Cpp-Scouting/1.0.1 https://goo.gl/RLJpkt"));
     ostringstream requeststream;
     request.setOpt(new curlpp::options::WriteStream(&requeststream));
     request.perform();
