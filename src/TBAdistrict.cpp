@@ -6,7 +6,7 @@ bool districtEvents(curlpp::Easy& request, const std::string& AuthKey, const std
 	// gets all the events in a district
     string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/events/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", events);
 		return true;
@@ -22,7 +22,7 @@ bool districtTeams(curlpp::Easy& request, const std::string& AuthKey, const std:
 	// gets all the teams in a district
     string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/teams/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", teams);
 		return true;

@@ -6,7 +6,7 @@ bool teamDistrict(curlpp::Easy& request, const std::string& AuthKey, const std::
 	// gets the district of a team (requires teamKey)
 	string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/districts" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parselast(response, "\"key\": \"", "\"", district);
 		return true;
@@ -22,7 +22,7 @@ bool teamEvents(curlpp::Easy& request, const std::string& AuthKey, const std::st
 	// gets all event keys a team has or will compete at (requires teamKey)
   string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/events/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", events);
 		return true;
@@ -38,7 +38,7 @@ bool yearTeamEvents(curlpp::Easy& request, const std::string& AuthKey, const std
 	// gets all event keys from a single FRC season (requires teamKey and year)
   string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/events/"+ year +"/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", events);
 		return true;
@@ -54,7 +54,7 @@ bool teamMatchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const
 	// get a teams match keys at an event (requires teamKey and eventKey)
 	string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/event/"+ eventKey +"/matches/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", matches);
 		return true;
@@ -70,7 +70,7 @@ bool teamAwardsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const 
 	// get a teams awards at an event (requires teamKey and eventKey)
 	string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/event/"+ eventKey +"/awards" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"name\": \"", "\"", awards);
 		return true;

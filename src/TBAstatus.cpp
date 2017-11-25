@@ -7,7 +7,7 @@ bool androidVer(curlpp::Easy& request, const std::string& AuthKey, std::string& 
 	version.resize(7);
 	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"latest_app_version\": ", version);
 		return true;
@@ -24,7 +24,7 @@ bool iosVer(curlpp::Easy& request, const std::string& AuthKey, std::string& vers
 	version.resize(2);
 	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parselast(response, "\"latest_app_version\": ", version);
 		return true;
@@ -41,7 +41,7 @@ bool currentSeason(curlpp::Easy& request, const std::string& AuthKey, std::strin
 	season.resize(4);
 	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"current_season\": ", season);
 		return true;

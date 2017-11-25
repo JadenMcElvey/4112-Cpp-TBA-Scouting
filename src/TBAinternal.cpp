@@ -5,7 +5,9 @@ string performtostring(curlpp::Easy& request, string& url)
 {
   //returns TBA response as string to be parsed
   try {
+    string userAgent = "4112-Cpp-Scouting/1.0.1 https://goo.gl/RLJpkt";
     request.setOpt(new curlpp::options::Url(url));
+    request.setOpt(new curlpp::options::UserAgent(userAgent));
     ostringstream requeststream;
     request.setOpt(new curlpp::options::WriteStream(&requeststream));
     request.perform();
@@ -161,6 +163,24 @@ bool parselast(std::string& response, std::string seperator1, std::string sepera
     end = search(start, response.end(), seperator2.begin(), seperator2.end());
     value.resize(std::distance(start, end));
     copy(start, end, value.begin());
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+bool parseError(std::string& response)
+{
+  if(parse(response, "\"Error\": \"", "\"", response))
+  {
+    cout << response << endl;
+    return true;
+  }
+  else if (parse(response, "\"Errors\": [", "]", response))
+  {
+    cout << response << endl;
     return true;
   }
   else
