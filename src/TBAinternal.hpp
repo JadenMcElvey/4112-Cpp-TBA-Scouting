@@ -24,4 +24,5 @@ bool parselast(std::string& response, std::string seperator, std::string& value)
 // finds value within TBA response after LAST occurence of seperator
 bool parselast(std::string& response, std::string seperator1, std::string seperator2, std::string& value);
 // use to parse for value between last occurence of two seperators
+bool parseError(std::string& response);
 #endif

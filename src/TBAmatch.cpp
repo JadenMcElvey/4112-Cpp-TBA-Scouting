@@ -6,7 +6,7 @@ bool disqualifiedTeams(curlpp::Easy& request, const std::string& AuthKey, const 
 	// gets a vector of all teams disqualified in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
         string disblue;
         string disred;
@@ -26,7 +26,7 @@ bool wasDisqualified(curlpp::Easy& request, const std::string& AuthKey, const st
 	// gets if a specific team was disqualified from a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string disblue;
         string disred;
@@ -46,7 +46,7 @@ bool autoPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 	// gets the auto points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -81,7 +81,7 @@ bool teleopPoints(curlpp::Easy& request, const std::string& AuthKey, const std::
 	// gets the teleop points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -116,7 +116,7 @@ bool totalPoints(curlpp::Easy& request, const std::string& AuthKey, const std::s
 	// gets the total points of an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -151,7 +151,7 @@ bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::str
 	// gets the number of fouls caused by an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -186,7 +186,7 @@ bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std:
 	// gets the number of tech fouls caused by an alliance in a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -221,7 +221,7 @@ bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 	// gets the number of points an alliance recieved from fouls
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string blue;
 		parse(response, "\"blue\": {", "}", blue);
@@ -256,7 +256,7 @@ bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::strin
 	// gets the teamKeys of the winners of a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;
 		parse(response, "\"winning_alliance\": \"", "\"", winningAlliance);
@@ -289,7 +289,7 @@ bool losers(curlpp::Easy& request, const std::string& AuthKey, const std::string
 	// gets the teamKeys of the losers of a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;
 		parse(response, "\"winning_alliance\": \"", "\"", winningAlliance);
@@ -322,7 +322,7 @@ bool didWin(curlpp::Easy& request, const std::string& AuthKey, const std::string
 	// gets whether or not a team won a match
     string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;
 		parse(response, "\"winning_alliance\": \"", "\"", winningAlliance);

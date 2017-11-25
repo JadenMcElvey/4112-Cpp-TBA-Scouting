@@ -170,3 +170,21 @@ bool parselast(std::string& response, std::string seperator1, std::string sepera
     return false;
   }
 }
+
+bool parseError(std::string& response)
+{
+  if(parse(response, "\"Error\": \"", "\"", response))
+  {
+    cout << response << endl;
+    return true;
+  }
+  else if (parse(response, "\"Errors\": [", "]", response))
+  {
+    cout << response << endl;
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}

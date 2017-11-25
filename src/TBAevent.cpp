@@ -6,7 +6,7 @@ bool teamsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::
 	// gets all the teams at an event
     string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/teams/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", teams);
 		return true;
@@ -21,7 +21,7 @@ bool opr(curlpp::Easy& request, const std::string& AuthKey, const std::string& e
 	// gets a map of the team keys and oprs of all the teams at an event
     string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/oprs" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
         string opr = "";
         parse(response, "\"oprs\": {", "}", opr);
@@ -38,7 +38,7 @@ bool dpr(curlpp::Easy& request, const std::string& AuthKey, const std::string& e
 	// gets a map of the team keys and dprs of all the teams at an event
     string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/oprs" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
         string dpr = "";
         parse(response, "\"dprs\": {", "}", dpr);
@@ -55,7 +55,7 @@ bool ccwm(curlpp::Easy& request, const std::string& AuthKey, const std::string& 
 	// gets a map of the team keys and ccwms of all the teams at an event
     string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/oprs" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
         string ccwm = "";
         parse(response, "\"ccwms\": {", "}", ccwm);
@@ -72,7 +72,7 @@ bool matchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std
 	// gets all the matchKeys of an event
     string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/matches/keys" + AuthKey;
 	string response = performtostring(request, url);
-	if (response != "{\"Error\": \"X-TBA-Auth-Key is invalid. Please get an access key at http://www.thebluealliance.com/account.}" && response != "")
+	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", matches);
 		return true;
