@@ -10,7 +10,7 @@
 #include "curlpp/Options.hpp"
 #include "curlpp/Exception.hpp"
 
-std::string performtostring(curlpp::Easy& request, std::string& url);
+std::string performtostring(curlpp::Easy& request, std::string& url, const std::string& AuthKey);
 // returns TBA response as string to be parsed
 bool parse(std::string& response, std::string seperator, std::string& value);
 // use to parse for value after FIRST occurence of seperator
