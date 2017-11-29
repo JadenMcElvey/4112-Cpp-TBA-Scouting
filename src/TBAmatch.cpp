@@ -4,8 +4,8 @@ using namespace std;
 bool disqualifiedTeams(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
 	// gets a vector of all teams disqualified in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
         string disblue;
@@ -24,8 +24,8 @@ bool disqualifiedTeams(curlpp::Easy& request, const std::string& AuthKey, const 
 bool wasDisqualified(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, bool& disqualified)
 {
 	// gets if a specific team was disqualified from a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string disblue;
@@ -44,8 +44,8 @@ bool wasDisqualified(curlpp::Easy& request, const std::string& AuthKey, const st
 bool autoPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
 	// gets the auto points of an alliance in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -79,8 +79,8 @@ bool autoPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 bool teleopPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
 	// gets the teleop points of an alliance in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -114,8 +114,8 @@ bool teleopPoints(curlpp::Easy& request, const std::string& AuthKey, const std::
 bool totalPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
 	// gets the total points of an alliance in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -149,8 +149,8 @@ bool totalPoints(curlpp::Easy& request, const std::string& AuthKey, const std::s
 bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
 {
 	// gets the number of fouls caused by an alliance in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -184,8 +184,8 @@ bool foulCount(curlpp::Easy& request, const std::string& AuthKey, const std::str
 bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& fouls)
 {
 	// gets the number of tech fouls caused by an alliance in a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -219,8 +219,8 @@ bool techFoulCount(curlpp::Easy& request, const std::string& AuthKey, const std:
 bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, std::string& points)
 {
 	// gets the number of points an alliance recieved from fouls
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string blue;
@@ -254,8 +254,8 @@ bool foulPoints(curlpp::Easy& request, const std::string& AuthKey, const std::st
 bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
 	// gets the teamKeys of the winners of a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;
@@ -287,8 +287,8 @@ bool winners(curlpp::Easy& request, const std::string& AuthKey, const std::strin
 bool losers(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, std::vector<std::string>& teams)
 {
 	// gets the teamKeys of the losers of a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;
@@ -320,8 +320,8 @@ bool losers(curlpp::Easy& request, const std::string& AuthKey, const std::string
 bool didWin(curlpp::Easy& request, const std::string& AuthKey, const std::string& matchKey, const std::string& teamKey, bool& win)
 {
 	// gets whether or not a team won a match
-    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/match/" + matchKey;
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		string winningAlliance;

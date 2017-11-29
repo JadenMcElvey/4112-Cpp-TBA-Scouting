@@ -5,8 +5,8 @@ bool androidVer(curlpp::Easy& request, const std::string& AuthKey, std::string& 
 {
 	//gets the current version of the TBA android app
 	version.resize(7);
-	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
-	string response = performtostring(request, url);
+	string url = "https://www.thebluealliance.com/api/v3/status";
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"latest_app_version\": ", version);
@@ -22,8 +22,8 @@ bool iosVer(curlpp::Easy& request, const std::string& AuthKey, std::string& vers
 {
 	//gets the current version of the TBA ios app
 	version.resize(2);
-	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
-	string response = performtostring(request, url);
+	string url = "https://www.thebluealliance.com/api/v3/status";
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		parselast(response, "\"latest_app_version\": ", version);
@@ -39,8 +39,8 @@ bool currentSeason(curlpp::Easy& request, const std::string& AuthKey, std::strin
 {
 	//gets the year of the current FRC season
 	season.resize(4);
-	string url = "https://www.thebluealliance.com/api/v3/status" + AuthKey;
-	string response = performtostring(request, url);
+	string url = "https://www.thebluealliance.com/api/v3/status";
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"current_season\": ", season);
