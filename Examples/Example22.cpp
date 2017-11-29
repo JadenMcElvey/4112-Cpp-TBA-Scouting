@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
     //declare variables
     curlpp::Easy request;
-    std::string authKey = "?X-TBA-Auth-Key=H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
+    std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string matchKey = "2017gagai_qm1";
     std::string teamKey = "frc5734";
     std::string foul;
