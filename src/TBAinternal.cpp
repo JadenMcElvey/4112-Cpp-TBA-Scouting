@@ -1,13 +1,16 @@
 #include "TBAinternal.hpp"
 using namespace std;
 
-string performtostring(curlpp::Easy& request, string& url)
+string performtostring(curlpp::Easy& request, string& url,const string& AuthKey)
 {
   //returns TBA response as string to be parsed
   try {
     string userAgent = "4112-Cpp-Scouting/1.0.1 https://goo.gl/RLJpkt";
+    list<string> header;
+    header.push_back("X-TBA-Auth-Key: " + AuthKey);
     request.setOpt(new curlpp::options::Url(url));
     request.setOpt(new curlpp::options::UserAgent(userAgent));
+    request.setOpt(new curlpp::options::HttpHeader(header));
     ostringstream requeststream;
     request.setOpt(new curlpp::options::WriteStream(&requeststream));
     request.perform();

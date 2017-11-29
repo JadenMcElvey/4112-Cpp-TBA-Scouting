@@ -4,8 +4,8 @@ using namespace std;
 bool districtEvents(curlpp::Easy& request, const std::string& AuthKey, const std::string& districtKey, std::vector<std::string>& events)
 {
 	// gets all the events in a district
-    string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/events/keys" + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/events/keys";
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", events);
@@ -20,8 +20,8 @@ bool districtEvents(curlpp::Easy& request, const std::string& AuthKey, const std
 bool districtTeams(curlpp::Easy& request, const std::string& AuthKey, const std::string& districtKey, std::vector<std::string>& teams)
 {
 	// gets all the teams in a district
-    string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/teams/keys" + AuthKey;
-	string response = performtostring(request, url);
+    string url = "https://www.thebluealliance.com/api/v3/district/" + districtKey + "/teams/keys";
+	string response = performtostring(request, url, AuthKey);
 	if (!parseError(response) && response != "")
 	{
 		parse(response, "\"", "\"", teams);
