@@ -30,7 +30,7 @@ All event functions require `#include "TBAevent.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. Outputs outputs the dprs of all the teams at an event  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9. Outputs outputs the ccwms of all the teams at an event  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. Outputs the match Keys of all the matches at an event  
-<!--- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11. Outputs the qualifier match Keys of all the matches at an event --->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11. Outputs the qualifier match Keys of all the matches at an event
 
 ## Team Examples
 All team functions require `#include "TBAteam.hpp"`
@@ -39,7 +39,7 @@ All team functions require `#include "TBAteam.hpp"`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13. Outputs all of a team's eventKeys  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14. Outputs a team's eventKeys for a specific season  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15. Outputs the matchKey's a team has at an event 
-<!--- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16. Outputs the qualifier match Keys of all the matches at an event ---> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16. Outputs the qualifier match Keys of all the matches at an event 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17. Outputs the awards won by a team at an event  
 
 ## Match Examples
