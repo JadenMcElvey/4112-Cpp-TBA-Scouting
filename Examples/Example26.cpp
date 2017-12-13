@@ -16,14 +16,16 @@ int main(int argc, char *argv[])
     curlpp::Easy request;
     std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string matchKey = "2017gagai_qm9";
-    std::string teamKey = "frc4112";
-    bool won;
+    std::vector<std::string> teams;
 
-    //write value to won
-    didWin(request, authKey, matchKey, teamKey, won);
+    //write values to teams
+    winners(request, authKey, matchKey, teams);
     
-    //write value to standard output
-    std::cout << won << std::endl;
+    //write values to standard output
+    for (std::vector<std::string>::iterator i = teams.begin(); i != teams.end(); i++)
+    {
+    	std::cout << *i << std::endl;
+    }
 
     return 0;
 }

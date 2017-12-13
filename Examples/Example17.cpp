@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "TBAmatch.hpp"
+#include "TBAteam.hpp"
 
 #include <curlpp/cURLpp.hpp>
 #include <curlpp/Easy.hpp>
@@ -15,15 +15,18 @@ int main(int argc, char *argv[])
     //declare variables
     curlpp::Easy request;
     std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
-    std::string matchKey = "2017gagai_qm1";
-    std::string teamKey = "frc5734";
-    bool disqualified;
+    std::string teamKey = "frc4112";
+    std::string eventKey = "2017gagai";
+    std::vector<std::string> awards;
 
-    //write value to disqualified
-    wasDisqualified(request, authKey, matchKey, teamKey, disqualified);
+    //write values to awards
+    teamAwardsAtEvent(request, authKey, teamKey, eventKey, awards);
     
-    //write value to standard output
-    std::cout << disqualified << std::endl;
+    //write values to standard output
+    for (std::vector<std::string>::iterator i = awards.begin(); i != awards.end(); i++)
+    {
+    	std::cout << *i << std::endl;
+    }
 
     return 0;
 }

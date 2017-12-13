@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
     curlpp::Easy request;
     std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string matchKey = "2017gagai_qm1";
-    std::string teamKey = "frc1311";
-    std::string points;
+    std::string teamKey = "frc5734";
+    std::string foul;
 
-    //write value to points
-    foulPoints(request, authKey, matchKey, teamKey, points);
+    //write value to foul
+    foulCount(request, authKey, matchKey, teamKey, foul);
     
     //write value to standard output
-    std::cout << points << std::endl;
+    std::cout << foul << std::endl;
 
     return 0;
 }

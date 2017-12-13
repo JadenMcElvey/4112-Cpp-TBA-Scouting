@@ -20,5 +20,7 @@ bool dpr(curlpp::Easy& request, const std::string& AuthKey, const std::string& e
 bool ccwm(curlpp::Easy& request, const std::string& AuthKey, const std::string& eventKey, std::map<std::string, std::string>& ccwms);
 // gets a map of the team keys and ccwms of all the teams at an event
 bool matchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& eventKey, std::vector<std::string>& matches);
-// gets all the matchKeys of an event
+// gets all the match Keys of an event
+bool qualsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& eventKey, std::vector<std::string>& matches);
+// gets all the qualifier match Keys of an event
 #endif
