@@ -82,3 +82,28 @@ bool matchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std
 		return false;
 	}
 }
+bool qualsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& eventKey, std::vector<std::string>& matches)
+{
+	// gets all the matchKeys of an event
+    string url = "https://www.thebluealliance.com/api/v3/event/" + eventKey + "/matches/keys";
+	string response = performtostring(request, url, AuthKey);
+	if (!parseError(response) && response != "")
+	{
+		parse(response, "\"", "\"", matches);
+		std::vector<std::string>::iterator matchKey;
+		for(matchKey = matches.begin(); matchKey != matches.end(); ++matchKey)
+        {
+            std::string qualifierMatch = "qm";
+            if (search(matchKey->begin(), matchKey->end(), qualifierMatch.begin(), qualifierMatch.end()) == matchKey->end())
+            {
+                matches.erase(matchKey);
+                --matchKey;
+            }
+        }
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

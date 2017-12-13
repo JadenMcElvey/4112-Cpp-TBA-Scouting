@@ -65,6 +65,32 @@ bool teamMatchesAtEvent(curlpp::Easy& request, const std::string& AuthKey, const
 	}
 }
 
+bool teamQualsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, const std::string& eventKey, std::vector<std::string>& matches)
+{
+	// get a teams match keys at an event (requires teamKey and eventKey)
+	string url = "https://www.thebluealliance.com/api/v3/team/" + teamKey + "/event/"+ eventKey +"/matches/keys";
+	string response = performtostring(request, url, AuthKey);
+	if (!parseError(response) && response != "")
+	{
+		parse(response, "\"", "\"", matches);
+		std::vector<std::string>::iterator matchKey;
+		for(matchKey = matches.begin(); matchKey != matches.end(); ++matchKey)
+        {
+            std::string qualifierMatch = "qm";
+            if (search(matchKey->begin(), matchKey->end(), qualifierMatch.begin(), qualifierMatch.end()) == matchKey->end())
+            {
+                matches.erase(matchKey);
+                --matchKey;
+            }
+        }
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 bool teamAwardsAtEvent(curlpp::Easy& request, const std::string& AuthKey, const std::string& teamKey, const std::string& eventKey, std::vector<std::string>& awards)
 {
 	// get a teams awards at an event (requires teamKey and eventKey)
