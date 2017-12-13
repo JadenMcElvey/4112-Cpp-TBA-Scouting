@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     std::string points;
 
     //write value to points
-    totalPoints(request, authKey, matchKey, teamKey, points);
+    autoPoints(request, authKey, matchKey, teamKey, points);
     
     //write value to standard output
     std::cout << points << std::endl;

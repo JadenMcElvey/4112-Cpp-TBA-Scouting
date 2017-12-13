@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 #include "TBAteam.hpp"
 
@@ -16,16 +15,13 @@ int main(int argc, char *argv[])
     curlpp::Easy request;
     std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
     std::string teamKey = "frc4112";
-    std::vector<std::string> events;
+    std::string district;
 
-    //write values to events
-    teamEvents(request, authKey, teamKey, events);
+    //write value to district
+    teamDistrict(request, authKey, teamKey, district);
     
-    //write values to standard output
-    for (std::vector<std::string>::iterator i = events.begin(); i != events.end(); i++)
-    {
-    	std::cout << *i << std::endl;
-    }
+    //write value to standard output
+    std::cout << district << std::endl;
 
     return 0;
 }

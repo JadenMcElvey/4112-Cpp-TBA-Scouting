@@ -15,17 +15,15 @@ int main(int argc, char *argv[])
     //declare variables
     curlpp::Easy request;
     std::string authKey = "H5B8Nt9mX2aFB3LocyRrZEpF7y9XwIWBST3tJRO0cOcqqs4AMwyl71K7zdFNlp16";
-    std::string matchKey = "2017gagai_qm9";
-    std::vector<std::string> teams;
+    std::string matchKey = "2017gagai_qm1";
+    std::string teamKey = "frc1311";
+    std::string points;
 
-    //write values to teams
-    losers(request, authKey, matchKey, teams);
+    //write value to points
+    foulPoints(request, authKey, matchKey, teamKey, points);
     
-    //write values to standard output
-    for (std::vector<std::string>::iterator i = teams.begin(); i != teams.end(); i++)
-    {
-    	std::cout << *i << std::endl;
-    }
+    //write value to standard output
+    std::cout << points << std::endl;
 
     return 0;
 }

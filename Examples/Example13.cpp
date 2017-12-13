@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     std::vector<std::string> events;
 
     //write values to events
-    yearTeamEvents(request, authKey, teamKey, "2017", events);
+    teamEvents(request, authKey, teamKey, events);
     
     //write values to standard output
     for (std::vector<std::string>::iterator i = events.begin(); i != events.end(); i++)
