@@ -34,19 +34,9 @@ int main(int argc, char *argv[])
     {
         //get vector of matches a team is participating in
         std::vector<std::string> matchKeys;
-        teamMatchesAtEvent(request, authKey, *teamKey, eventKey, matchKeys);
+        teamQualsAtEvent(request, authKey, *teamKey, eventKey, matchKeys);
         //create matchKey iterator
         std::vector<std::string>::iterator matchKey;
-        //remove all match keys from matchKeys that are not qualifier matches
-        for(matchKey = matchKeys.begin(); matchKey != matchKeys.end(); ++matchKey)
-        {
-            std::string qualifierMatch = "qm";
-            if (search(matchKey->begin(), matchKey->end(), qualifierMatch.begin(), qualifierMatch.end()) == matchKey->end())
-            {
-                matchKeys.erase(matchKey);
-                --matchKey;
-            }
-        }
         //calculate autonomous point average
         std::string points;
         float autoAvg = 0.0;
